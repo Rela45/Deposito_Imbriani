@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rela\\Documents\\GitHub\\Deposito_Imbriani\\Corso C#\\6 Ottobre 2025\\Mattina\\DolceGelo\\DolceGelo.csproj",
+      "projectUniqueName": "C:\\Users\\Rela\\Documents\\GitHub\\Deposito_Imbriani\\Corso C#\\DolceGelo\\DolceGelo.csproj",
       "projectName": "DolceGelo",
-      "projectPath": "C:\\Users\\Rela\\Documents\\GitHub\\Deposito_Imbriani\\Corso C#\\6 Ottobre 2025\\Mattina\\DolceGelo\\DolceGelo.csproj",
+      "projectPath": "C:\\Users\\Rela\\Documents\\GitHub\\Deposito_Imbriani\\Corso C#\\DolceGelo\\DolceGelo.csproj",
       "packagesPath": "C:\\Users\\Rela\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rela\\Documents\\GitHub\\Deposito_Imbriani\\Corso C#\\6 Ottobre 2025\\Mattina\\DolceGelo\\obj\\",
+      "outputPath": "C:\\Users\\Rela\\Documents\\GitHub\\Deposito_Imbriani\\Corso C#\\DolceGelo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rela\\AppData\\Roaming\\NuGet\\NuGet.Config"

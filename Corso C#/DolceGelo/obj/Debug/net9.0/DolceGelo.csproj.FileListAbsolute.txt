@@ -1,0 +1,15 @@
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\DolceGelo\bin\Debug\net9.0\DolceGelo.exe
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\DolceGelo\bin\Debug\net9.0\DolceGelo.deps.json
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\DolceGelo\bin\Debug\net9.0\DolceGelo.runtimeconfig.json
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\DolceGelo\bin\Debug\net9.0\DolceGelo.dll
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\DolceGelo\bin\Debug\net9.0\DolceGelo.pdb
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\DolceGelo\obj\Debug\net9.0\DolceGelo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\DolceGelo\obj\Debug\net9.0\DolceGelo.AssemblyInfoInputs.cache
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\DolceGelo\obj\Debug\net9.0\DolceGelo.AssemblyInfo.cs
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\DolceGelo\obj\Debug\net9.0\DolceGelo.csproj.CoreCompileInputs.cache
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\DolceGelo\obj\Debug\net9.0\DolceGelo.sourcelink.json
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\DolceGelo\obj\Debug\net9.0\DolceGelo.dll
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\DolceGelo\obj\Debug\net9.0\refint\DolceGelo.dll
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\DolceGelo\obj\Debug\net9.0\DolceGelo.pdb
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\DolceGelo\obj\Debug\net9.0\DolceGelo.genruntimeconfig.cache
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\DolceGelo\obj\Debug\net9.0\ref\DolceGelo.dll
