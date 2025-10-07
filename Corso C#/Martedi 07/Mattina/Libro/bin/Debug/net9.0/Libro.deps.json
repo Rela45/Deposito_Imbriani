@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v9.0": {
-      "DolceGelo/1.0.0": {
+      "Libro/1.0.0": {
         "runtime": {
-          "DolceGelo.dll": {}
+          "Libro.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "DolceGelo/1.0.0": {
+    "Libro/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
