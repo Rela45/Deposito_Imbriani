@@ -21,10 +21,12 @@ public class Veicolo
 
 public class Auto : Veicolo
 {
-    public Auto(string? marca, string? modello) : base(marca, modello) //sovrascrivo il costruttore
+    protected int NumeroPorte;
+    public Auto(string? marca, string? modello, int NumeroPorte) : base(marca, modello) //sovrascrivo il costruttore
     {
         this.Marca = marca;
         this.Modello = modello;
+        this.NumeroPorte = NumeroPorte;
     }
     public override string? ToString()
     {
@@ -35,10 +37,13 @@ public class Auto : Veicolo
 
 public class Moto : Veicolo
 {
-    public Moto(string? marca, string? modello) : base(marca, modello)
+    protected string? tipoManubrio;
+    public Moto(string? marca, string? modello, string? tipoManubrio) : base(marca, modello)
     {
         this.Marca = marca;
         this.Modello = modello;
+        this.tipoManubrio = tipoManubrio;
+        
     }
     public override string ToString()
     {
@@ -70,14 +75,19 @@ class Program
                     string? marcaAuto = Console.ReadLine();
                     Console.WriteLine("Inserisci modello auto");
                     string? modelloAuto = Console.ReadLine();
-                    garage.Add(new Auto(marcaAuto, modelloAuto));
+                    int nPorte = Convert.ToInt32(Console.ReadLine());
+                    
+                    garage.Add(new Auto(marcaAuto, modelloAuto, nPorte));
                     break;
                 case 2:
                     Console.WriteLine("Inserisci marca moto");
                     string? marcaMoto = Console.ReadLine();
                     Console.WriteLine("Inserisci modello moto");
                     string? modelloMoto = Console.ReadLine();
-                    garage.Add(new Moto(marcaMoto, modelloMoto));
+                    Console.WriteLine("Inserisci tipo manubrio");
+                    string? tipoManubrio = Console.ReadLine();
+                    
+                    garage.Add(new Moto(marcaMoto, modelloMoto, tipoManubrio));
                     break;
 
 
