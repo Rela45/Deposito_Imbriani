@@ -10,12 +10,12 @@ public class Corso
     string? Docente;
     List<string> Studenti;
 
-    public Corso(string? nomeCorso, int durataOre, string? docente, List<string> studenti)
+    public Corso(string? nomeCorso, int durataOre, string? docente)
     {
         NomeCorso = nomeCorso;
         this.durataOre = durataOre;
         Docente = docente;
-        Studenti = studenti;
+        Studenti = new List<string>();
     }
 
     public void AggiungiStudente(string studente)
@@ -33,7 +33,7 @@ public class Corso
 public class CorsoMusica : Corso
 {
     string? strumentoMusicale;
-    public CorsoMusica(string? NomeCorso, int durataOre, string? docente, List<string> studenti, string strumentoMusicale) : base(NomeCorso, durataOre, docente, studenti)
+    public CorsoMusica(string? NomeCorso, int durataOre, string? docente, string? strumentoMusicale) : base(NomeCorso, durataOre, docente) //costruttore padre overridato in figlio e modificato aggiungendo l'attributo della classe figlio
     {
         this.strumentoMusicale = strumentoMusicale;
     }
@@ -52,7 +52,7 @@ public class CorsoMusica : Corso
 public class CorsoPittura : Corso
 {
     string? tecnica;
-    public CorsoPittura(string? NomeCorso, int durataOre, string? docente, List<string> studenti, string? tecnica) : base(NomeCorso, durataOre, docente, studenti)
+    public CorsoPittura(string? NomeCorso, int durataOre, string? docente, string? tecnica) : base(NomeCorso, durataOre, docente) 
     {
         this.tecnica = tecnica;
     }
@@ -72,7 +72,7 @@ public class CorsoDanza : Corso
 {
     string? stile;
 
-    public CorsoDanza(string? NomeCorso, int durataOre, string? docente, List<string> studenti, string? stile) : base(NomeCorso, durataOre, docente, studenti)
+    public CorsoDanza(string? NomeCorso, int durataOre, string? docente, string? stile) : base(NomeCorso, durataOre, docente)
     {
         this.stile = stile;
     }
@@ -94,7 +94,7 @@ public class Program
     {
         List<Corso> listaCorsi = new List<Corso>();
         bool continua = true;
-
+        //inizio menu
         while (continua)
         {
             Console.WriteLine($"inserisci il tipo di corso da inserire: 1 per Musica, 2 per Pittura, 3 per Danza");
@@ -111,6 +111,29 @@ public class Program
                     string? docente = Console.ReadLine();
                     Console.WriteLine("Inserisci il numero di studenti:");
                     int numStudenti = int.Parse(Console.ReadLine());
+                    Console.WriteLine($"Inserisci lo strumento musicale");
+                    string? strumentoMusicale = Console.ReadLine();
+                    List<string> studentiMusica = new List<string>();    //non sto usando la lista che ho nella classe ma non sono riuscito a gestirla diversamente
+                    for (int i = 0; i < numStudenti; i++)
+                    {
+                        Console.WriteLine($"Inserisci il nome dello studente {i + 1}:");
+                        string? studente = Console.ReadLine();
+                        if (!string.IsNullOrEmpty(studente))
+                        {
+                            studentiMusica.Add(studente);
+                        }
+                    }
+                    CorsoMusica corsoMusica = new CorsoMusica(nomeCorso, durataOre, docente, strumentoMusicale);
+                    listaCorsi.Add(corsoMusica);
+
+                    //il procedimento dovrebbe essere uguale per tutti e 3 i casi di tipoCorso
+
+                    // -----------questa poteva essere una soluzione usato insieme alla lista creata nel main o si doveva gestire in modo completamente diverso come avevo immaginato usando solo la lista in Corso?--------------------
+                    // foreach (var studente in studentiMusica)
+                    // {
+                    //     corsoMusica.AggiungiStudente(studente);
+                    // }
+
 
                     //-------------------------------------------Devo verificare che questo tipo di codice vada bene che in consegna non ho capito bene cosa si intendeva---------------------------
                     // List<string> studenti = new List<string>();
@@ -150,6 +173,8 @@ public class Program
 
                     break;
             }
+            
+            //in compilazione funzionava il metodo e riuscivo a salvare i nomi degli studenti
         }
     }
 }
