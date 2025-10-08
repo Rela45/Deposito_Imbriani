@@ -1,0 +1,15 @@
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\Mercoledi 08\Mattina\VoloAereo\bin\Debug\net9.0\VoloAereo.exe
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\Mercoledi 08\Mattina\VoloAereo\bin\Debug\net9.0\VoloAereo.deps.json
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\Mercoledi 08\Mattina\VoloAereo\bin\Debug\net9.0\VoloAereo.runtimeconfig.json
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\Mercoledi 08\Mattina\VoloAereo\bin\Debug\net9.0\VoloAereo.dll
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\Mercoledi 08\Mattina\VoloAereo\bin\Debug\net9.0\VoloAereo.pdb
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\Mercoledi 08\Mattina\VoloAereo\obj\Debug\net9.0\VoloAereo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\Mercoledi 08\Mattina\VoloAereo\obj\Debug\net9.0\VoloAereo.AssemblyInfoInputs.cache
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\Mercoledi 08\Mattina\VoloAereo\obj\Debug\net9.0\VoloAereo.AssemblyInfo.cs
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\Mercoledi 08\Mattina\VoloAereo\obj\Debug\net9.0\VoloAereo.csproj.CoreCompileInputs.cache
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\Mercoledi 08\Mattina\VoloAereo\obj\Debug\net9.0\VoloAereo.sourcelink.json
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\Mercoledi 08\Mattina\VoloAereo\obj\Debug\net9.0\VoloAereo.dll
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\Mercoledi 08\Mattina\VoloAereo\obj\Debug\net9.0\refint\VoloAereo.dll
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\Mercoledi 08\Mattina\VoloAereo\obj\Debug\net9.0\VoloAereo.pdb
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\Mercoledi 08\Mattina\VoloAereo\obj\Debug\net9.0\VoloAereo.genruntimeconfig.cache
+C:\Users\Rela\Documents\GitHub\Deposito_Imbriani\Corso C#\Mercoledi 08\Mattina\VoloAereo\obj\Debug\net9.0\ref\VoloAereo.dll
