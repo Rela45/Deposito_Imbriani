@@ -97,7 +97,7 @@ public class Program
         //inizio menu
         while (continua)
         {
-            Console.WriteLine($"inserisci il tipo di corso da inserire: 1 per Musica, 2 per Pittura, 3 per Danza");
+            Console.WriteLine($"inserisci il tipo di corso da inserire: 1 per Musica, 2 per Pittura, 3 per Danza, 4 per visualizzare tutti i corsi");
             int tipoCorso = int.Parse(Console.ReadLine());
 
             switch (tipoCorso)
@@ -109,25 +109,61 @@ public class Program
                     int durataOre = int.Parse(Console.ReadLine());
                     Console.WriteLine("Inserisci il nome del docente:");
                     string? docente = Console.ReadLine();
-                    Console.WriteLine("Inserisci il numero di studenti:");
-                    int numStudenti = int.Parse(Console.ReadLine());
+               
                     Console.WriteLine($"Inserisci lo strumento musicale");
                     string? strumentoMusicale = Console.ReadLine();
-                    List<string> studentiMusica = new List<string>();    //non sto usando la lista che ho nella classe ma non sono riuscito a gestirla diversamente
-                    for (int i = 0; i < numStudenti; i++)
-                    {
-                        Console.WriteLine($"Inserisci il nome dello studente {i + 1}:");
-                        string? studente = Console.ReadLine();
-                        if (!string.IsNullOrEmpty(studente))
-                        {
-                            studentiMusica.Add(studente);
-                        }
-                    }
+                   
                     CorsoMusica corsoMusica = new CorsoMusica(nomeCorso, durataOre, docente, strumentoMusicale);
+                    Console.WriteLine($"Inserisci il nome dello studente :");
+                    string? studente = Console.ReadLine();
+                    corsoMusica.AggiungiStudente(studente);
+                    
                     listaCorsi.Add(corsoMusica);
+                    break;
+                case 2: 
+                    Console.WriteLine("Inserisci il nome del corso di Pittura:");
+                    string? nomeCorso2 = Console.ReadLine();
+                    Console.WriteLine("Inserisci la durata in ore:");
+                    int durataOre2 = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Inserisci il nome del docente:");
+                    string? docente2 = Console.ReadLine();
+                  
+                    Console.WriteLine($"Inserisci lo strumento musicale");
+                    string? tecnica = Console.ReadLine();
+                    
+                    CorsoMusica corsoPittura = new CorsoMusica(nomeCorso2, durataOre2, docente2, tecnica);
+                    Console.WriteLine($"Inserisci il nome dello studente :");
+                    string? studente2 = Console.ReadLine();
+                    corsoPittura.AggiungiStudente(studente2);
+                    
+                  
+                
+                    listaCorsi.Add(corsoPittura);
+                    break;
+                case 3:
+                    Console.WriteLine("Inserisci il nome del corso di Pittura:");
+                    string? nomeCorso3 = Console.ReadLine();
+                    Console.WriteLine("Inserisci la durata in ore:");
+                    int durataOre3 = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Inserisci il nome del docente:");
+                    string? docente3 = Console.ReadLine();
+                    
+                    Console.WriteLine($"Inserisci lo strumento musicale");
+                    string? stile = Console.ReadLine();
+                    
+                    CorsoMusica corsoDanza = new CorsoMusica(nomeCorso3, durataOre3, docente3, stile);
+                    Console.WriteLine($"Inserisci il nome dello studente :");
+                    string? studente3 = Console.ReadLine();
+                    corsoDanza.AggiungiStudente(studente3);
 
+                    listaCorsi.Add(corsoDanza);
+
+                    break;
                     //il procedimento dovrebbe essere uguale per tutti e 3 i casi di tipoCorso
-
+                case 4:
+                    Console.WriteLine($"{listaCorsi}");
+                    break;
+                    
                     // -----------questa poteva essere una soluzione usato insieme alla lista creata nel main o si doveva gestire in modo completamente diverso come avevo immaginato usando solo la lista in Corso?--------------------
                     // foreach (var studente in studentiMusica)
                     // {

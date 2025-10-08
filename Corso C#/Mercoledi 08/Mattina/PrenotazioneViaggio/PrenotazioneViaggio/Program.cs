@@ -7,9 +7,10 @@ class PrenotazioneViaggio
     private int postiPrenotati;
     private const int MAX_POSTI = 20;
 
-    public string Destinazione { get; set; }
+    public string Destinazione { get; set; }  //setto la destinazione come proprietà
+    
 
-    public int PostiLiberi()
+    public int PostiLiberi()    //calcolo i postiliberi
     {
         return MAX_POSTI - postiPrenotati;
     }
@@ -43,15 +44,24 @@ class PrenotazioneViaggio
 
     public int PostiPrenotati
     {
-        get { return postiPrenotati; }
+        get { return postiPrenotati; }        //mi prendo i posti prenotati per usarli in un calcolo successivamente
     }
-    public void VisualizzaStato()
-    {
-        Console.WriteLine($" Posti occupati: {postiPrenotati}, Posti liberi: {PostiLiberi()}");
-    }
+
 }
 
+class Utente : PrenotazioneViaggio
+{
+    private string? nome;
 
+    public Utente(string? nome)
+    {
+        this.nome = nome;
+    }
+    public override string ToString()
+    {
+        return nome;
+    }
+}
 
 
 class Program
@@ -60,38 +70,46 @@ class Program
     {
         bool continua = true;   
         PrenotazioneViaggio prenotazione = new PrenotazioneViaggio();
-        
+        List<Utente> listaUtenti = new List<Utente>();  //la uso per salvarmi gli utenti
 
         while (continua)
         {
-            Console.WriteLine($"Premi: \n1 per aggiungere una destinazione \n2 per prenotare il viaggio \n3 per annullare una prenotazione\n4 per visualizzare i posti ancora disponibili\n5 per uscire dall'applicazione");
+            Console.WriteLine($"inserisci il tuo nome");
+            string? nome = Console.ReadLine();
+            listaUtenti.Add(new Utente(nome));
+            Console.WriteLine($"Premi: \n1 per aggiungere una destinazione \n2 per prenotare il viaggio \n3 per annullare una prenotazione\n4 per uscire dall'applicazione");
             int scelta = Convert.ToInt32(Console.ReadLine());
             switch (scelta)
             {
                 case 1:
                     Console.WriteLine($"Aggiungi una destinazione");
                     prenotazione.Destinazione = Console.ReadLine();
-                    break;
+                    continue;
 
                 case 2:
                     Console.WriteLine($"quanti posti vuoi prenotare?");
                     int input = Convert.ToInt32(Console.ReadLine());
                     prenotazione.EffettuaPrenotazione(input);
                     break;
-                        
+
                 case 3:
-                        Console.WriteLine($"quanti posti vuoi rimuovere?");
-                        int input2 = Convert.ToInt32(Console.ReadLine());
-                        prenotazione.RimuoviPrenotazione(input2);
-                        break;
+                    Console.WriteLine($"quanti posti vuoi rimuovere?");
+                    int input2 = Convert.ToInt32(Console.ReadLine());
+                    prenotazione.RimuoviPrenotazione(input2);
+                    break;
+
                 case 4:
-                        prenotazione.VisualizzaStato();
-                        break;
-                case 5:
-                        Console.WriteLine($"fine");
-                        continua = false;
-                        break;
+                    Console.WriteLine($"fine");
+                    continua = false;
+                    break;
+
+                    
                 }
+            foreach (Utente utente in listaUtenti)
+            {
+                Console.WriteLine($"posti prenotati : {prenotazione.PostiPrenotati} , da : {utente} ");     
+            }
+        
         }
     }
 }
