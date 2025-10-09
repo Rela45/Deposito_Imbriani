@@ -72,9 +72,12 @@ class OperatoreSicurezza : Operatore  //figlio 2
     }
 
 
-
     public override void EseguiCompito()
     {
+        /// <summary>
+        /// stampa una stringa in console (sicurezza)
+        /// </summary>
+        /// <value>richiede una stringa</value>
         Console.WriteLine($"Sorveglianza dell'area {areaSorvegliata}");
     }
 
@@ -91,6 +94,10 @@ class OperatoreLogistica : Operatore   //figlio 3
 
     public override void EseguiCompito()
     {
+        /// <summary>
+        /// stampa una stringa in console (logistica)
+        /// </summary>
+        /// <value>richiede un valore (int)</value>
         Console.WriteLine($"Coordinamento di {numeroConsegne} consegne");
     }
 }
