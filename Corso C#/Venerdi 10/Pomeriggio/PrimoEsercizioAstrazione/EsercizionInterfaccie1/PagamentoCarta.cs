@@ -2,7 +2,7 @@ using PrimoEsercizioAstrazione.EsercizioInterfaccie;
 
 class PagamentoCarta : IPagamento
 {
-    public string Circuito { get; set; }
+    public string? Circuito { get; set; }
 
     public void MostraMetodo()
     {

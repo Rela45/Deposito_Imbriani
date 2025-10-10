@@ -1,4 +1,4 @@
-using Venerdi10.PrimoEsercizioAstrazione;
+
 
 class Computer : DispositivoElettronico
 {
