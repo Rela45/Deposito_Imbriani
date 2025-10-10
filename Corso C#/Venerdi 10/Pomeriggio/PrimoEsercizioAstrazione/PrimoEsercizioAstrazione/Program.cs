@@ -11,7 +11,7 @@ class Program
         bool continua = true;
         while (continua)
         {
-            Console.WriteLine("\n--- MENU ESERCITO ---");
+            Console.WriteLine("\n--- MENU ---");
             Console.WriteLine("1) Aggiungi un Computer");
             Console.WriteLine("2) Aggiungi una stampante");
             Console.WriteLine("3) Accendi dispositivo");

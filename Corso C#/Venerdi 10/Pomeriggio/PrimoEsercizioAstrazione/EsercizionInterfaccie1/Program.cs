@@ -2,22 +2,9 @@
 
 class Program
 {
-    static void AccediSoloUno(List<IPagamento> lista, int indice)
-    {
-        if (indice >= 0 && indice < lista.Count)
-        {
-            Console.WriteLine($"Inserisci importo");
-            Utils.ReadLine(out float importo);
-
-            lista[indice].EseguiPagamento(importo); // Metodo polimorfico
-        }
-        else
-        {
-            Console.WriteLine("Indice non valido.");
-        }
-    }
     public static void Main(string[] args)
     {
+
         List<IPagamento> pagamentos = new List<IPagamento>();
         bool continua = true;
         int i = 0;
@@ -42,26 +29,54 @@ class Program
                     Console.WriteLine($"Inserisci importo");
                     Utils.ReadLine(out float importo);
                     pagamentos[i].EseguiPagamento(importo);
+                    i++;
                     break;
                 case 2:
                     pagamentos.Add(new PagamentoContanti());
+                    Console.WriteLine($"Inserisci importo");
                     Utils.ReadLine(out float importo2);
                     pagamentos[i].EseguiPagamento(importo2);
+                    i++;
                     break;
                 case 3:
                     pagamentos.Add(new PagamentoPayPal());
+                    Console.WriteLine($"Inserisci importo");
                     Utils.ReadLine(out float importo3);
                     pagamentos[i].EseguiPagamento(importo3);
+                    i++;
+                    break;
+                case 4:
+                    
+                    AccediSoloUno(i);
+                    
                     break;
             }
-            i++;
-            foreach(PagamentoCarta p in pagamentos)
+            
+            foreach (PagamentoCarta p in pagamentos)
             {
                 Console.WriteLine(p);
-                
+
             }
             // AccediSoloUno(pagamentos, i);
         }
+
+        void AccediSoloUno(int indice)
+        {
+            if (indice >= 0 && indice < pagamentos.Count)
+            {
+                Console.WriteLine($"Inserisci importo");
+                Utils.ReadLine(out float importo);
+
+                pagamentos[indice].EseguiPagamento(importo); // Metodo polimorfico
+                Console.WriteLine($"Accesso Garantito");
+                
+            }
+            else
+            {
+                Console.WriteLine("Indice non valido.");
+            }
+        }
+
     }
 }
 
