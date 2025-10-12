@@ -4,79 +4,66 @@ class Program
 {
     public static void Main(string[] args)
     {
-
         List<IPagamento> pagamentos = new List<IPagamento>();
         bool continua = true;
         int i = 0;
+
         while (continua)
         {
             Console.WriteLine("\n--- MENU PAGAMENTI ---");
-            Console.WriteLine("1 Per pagare con carta ");
-            Console.WriteLine("2) Per pagare in contanti");
-            Console.WriteLine("3) Per pagare con PayPal");
+            Console.WriteLine("1) Pagamento con carta");
+            Console.WriteLine("2) Pagamento in contanti");
+            Console.WriteLine("3) Pagamento con PayPal");
             Console.WriteLine("4) Esci");
 
             Console.Write("Scelta: ");
             Utils.ReadLine(out int scelta);
-            if (scelta == 0)
-            {
-                continua = false;
-            }
+
             switch (scelta)
             {
                 case 1:
                     pagamentos.Add(new PagamentoCarta());
-                    Console.WriteLine($"Inserisci importo");
-                    Utils.ReadLine(out float importo);
-                    pagamentos[i].EseguiPagamento(importo);
+                    AccediSoloUno(i);
                     i++;
                     break;
                 case 2:
                     pagamentos.Add(new PagamentoContanti());
-                    Console.WriteLine($"Inserisci importo");
-                    Utils.ReadLine(out float importo2);
-                    pagamentos[i].EseguiPagamento(importo2);
+                    AccediSoloUno(i);
                     i++;
                     break;
                 case 3:
-                    pagamentos.Add(new PagamentoPayPal());
-                    Console.WriteLine($"Inserisci importo");
-                    Utils.ReadLine(out float importo3);
-                    pagamentos[i].EseguiPagamento(importo3);
+                    Console.WriteLine($"Aggiungi Email Utente");
+                    Utils.ReadLine(out string email);
+                    pagamentos.Add(new PagamentoPayPal(email));
+                    AccediSoloUno(i);
+
                     i++;
                     break;
                 case 4:
-                    
-                    AccediSoloUno(i);
-                    
+                    continua = false;
+                    break;
+                default:
+                    Console.WriteLine("Scelta non valida.");
                     break;
             }
-            
-            foreach (PagamentoCarta p in pagamentos)
-            {
-                Console.WriteLine(p);
 
-            }
-            // AccediSoloUno(pagamentos, i);
         }
 
+        // Method inside Main
         void AccediSoloUno(int indice)
         {
             if (indice >= 0 && indice < pagamentos.Count)
             {
-                Console.WriteLine($"Inserisci importo");
+                Console.WriteLine("Accesso garantito");
+                Console.WriteLine("Inserisci importo:");
                 Utils.ReadLine(out float importo);
-
-                pagamentos[indice].EseguiPagamento(importo); // Metodo polimorfico
-                Console.WriteLine($"Accesso Garantito");
-                
+                pagamentos[indice].MostraMetodo();
+                pagamentos[indice].EseguiPagamento(importo); // Polymorphic call
             }
             else
             {
                 Console.WriteLine("Indice non valido.");
             }
         }
-
     }
 }
-
