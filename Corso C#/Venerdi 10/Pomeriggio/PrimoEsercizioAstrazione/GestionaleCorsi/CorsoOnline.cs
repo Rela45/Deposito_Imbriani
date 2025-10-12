@@ -3,9 +3,6 @@ using GestionaleCorsi;
 
 class CorsoOnline : Corso
 {
-    private string? _piattaforma;
-    private string? _linkAccesso;
-
     public string? Piattaforma{ set; get;}
     public string? LinkAccesso{ get; set;}
     public CorsoOnline(string titolo, int durata, string? piattaforma, string? linkAccesso) : base(titolo, durata)

@@ -2,13 +2,21 @@ using GestionaleCorsi;
 
 class CorsoInPresenza : Corso
 {
-    private string? _aula;
     private int _numeroPosti;
-    public int numeroPosti { get { return numeroPosti; } set { if (numeroPosti != 0) numeroPosti = value; } }
+
+public int NumeroPosti
+{
+    get { return _numeroPosti; }
+    set
+    {
+        if (value != 0) // check incoming value, not old one
+            _numeroPosti = value;
+    }
+}
     public string? Aula { get; set; }
     public CorsoInPresenza(string titolo, int durata, int nPosti,string aula) : base(titolo, durata)
     {
-        numeroPosti = nPosti;
+        NumeroPosti = nPosti;
         Aula = aula;
     }
 
@@ -20,7 +28,7 @@ class CorsoInPresenza : Corso
 
     public override void stampaDettagli()
     {
-        Console.WriteLine($"Titolo corso: {Titolo}, \nDurata: {DurataOre}, \nNumeroPosti: {numeroPosti} , \nAula: {Aula}");
+        Console.WriteLine($"Titolo corso: {Titolo}, \nDurata: {DurataOre}, \nNumeroPosti: {NumeroPosti} , \nAula: {Aula}");
         
     }
 }
