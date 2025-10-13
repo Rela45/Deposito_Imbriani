@@ -5,6 +5,8 @@
         public static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Utente utente1 = new Utente("Alice");
+            Utente utente2 = new Utente("Michele");
 
             var log1 = Logger.GetIstanza();
             log1.ScriviMessaggio("Ciao sto avviando l'app");
@@ -20,6 +22,7 @@
             Console.WriteLine("\nPremi un tasto per uscire...");
             Console.ReadKey();
 
+            
 
         }
         static void EseguiOperazioneDiBusiness()
