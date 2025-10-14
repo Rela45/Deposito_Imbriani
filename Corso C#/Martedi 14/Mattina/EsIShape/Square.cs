@@ -1,7 +1,7 @@
-public class ConcreteSquare : IShape
+class Square : ShapeCreator
 {
-    public void Draw()
+    public override IShape CreateShape(string type)
     {
-        Console.WriteLine($"Disegno un Quadrato");
+        return new ConcreteSquare();
     }
 }

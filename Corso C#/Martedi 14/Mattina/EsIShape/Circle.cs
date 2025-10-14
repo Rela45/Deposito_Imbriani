@@ -1,7 +1,7 @@
-public class ConcreteCircle : IShape
+class Circle : ShapeCreator
 {
-    public void Draw()
+    public override IShape CreateShape(string type)
     {
-        Console.WriteLine($"Disegno un cerchio");
+        return new ConcreteCircle();
     }
 }
