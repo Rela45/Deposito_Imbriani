@@ -13,14 +13,12 @@ class Program
                 cerchio.Shape(tipo);
                 break;
             case "quadrato":
-                Circle quadrato = new Circle();
+                Square quadrato = new Square();
                 quadrato.Shape(tipo);
                 break;
             default:
                 Console.WriteLine("Forma non valida");
                 break;
         }
-
-        
     }
 }
