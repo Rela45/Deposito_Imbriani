@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GestionaleCorsi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9466fccf8b9bfe01d38196bdd077a7aa71491f8e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d92ec7959a8aab0e831e4d57c30197026f042c0")]
 [assembly: System.Reflection.AssemblyProductAttribute("GestionaleCorsi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GestionaleCorsi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
