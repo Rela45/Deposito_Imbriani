@@ -119,6 +119,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pomeriggio", "Pomeriggio", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esercizio3Pattern", "Corso C#\Mercoledi 15\Pomeriggio\Esercizio3Pattern\Esercizio3Pattern.csproj", "{A0950114-8787-4A50-8FC7-F91BE755C167}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bevande", "Corso C#\Mercoledi 15\Pomeriggio\Bevande\Bevande.csproj", "{71E0B15F-AAF1-41DE-B967-FC590611BFDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -465,6 +467,18 @@ Global
 		{A0950114-8787-4A50-8FC7-F91BE755C167}.Release|x64.Build.0 = Release|Any CPU
 		{A0950114-8787-4A50-8FC7-F91BE755C167}.Release|x86.ActiveCfg = Release|Any CPU
 		{A0950114-8787-4A50-8FC7-F91BE755C167}.Release|x86.Build.0 = Release|Any CPU
+		{71E0B15F-AAF1-41DE-B967-FC590611BFDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71E0B15F-AAF1-41DE-B967-FC590611BFDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71E0B15F-AAF1-41DE-B967-FC590611BFDA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{71E0B15F-AAF1-41DE-B967-FC590611BFDA}.Debug|x64.Build.0 = Debug|Any CPU
+		{71E0B15F-AAF1-41DE-B967-FC590611BFDA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{71E0B15F-AAF1-41DE-B967-FC590611BFDA}.Debug|x86.Build.0 = Debug|Any CPU
+		{71E0B15F-AAF1-41DE-B967-FC590611BFDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71E0B15F-AAF1-41DE-B967-FC590611BFDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71E0B15F-AAF1-41DE-B967-FC590611BFDA}.Release|x64.ActiveCfg = Release|Any CPU
+		{71E0B15F-AAF1-41DE-B967-FC590611BFDA}.Release|x64.Build.0 = Release|Any CPU
+		{71E0B15F-AAF1-41DE-B967-FC590611BFDA}.Release|x86.ActiveCfg = Release|Any CPU
+		{71E0B15F-AAF1-41DE-B967-FC590611BFDA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -527,6 +541,7 @@ Global
 		{9E1EE6B1-3DB3-42F4-A8D3-A22A2411A9B5} = {C8280459-B0DA-9807-B61A-A9BAB821A63B}
 		{7D5F981A-DD1B-6028-14EF-6BB342ED53A1} = {266BD926-E257-AFA2-28F9-890C17B4266A}
 		{A0950114-8787-4A50-8FC7-F91BE755C167} = {7D5F981A-DD1B-6028-14EF-6BB342ED53A1}
+		{71E0B15F-AAF1-41DE-B967-FC590611BFDA} = {7D5F981A-DD1B-6028-14EF-6BB342ED53A1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6DD4E2A0-0805-4325-A35D-9D0E72656C6A}
