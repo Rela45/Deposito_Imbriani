@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-public class UserFactory
+public sealed class UserFactory
 {
     private static UserFactory _instance;
 
