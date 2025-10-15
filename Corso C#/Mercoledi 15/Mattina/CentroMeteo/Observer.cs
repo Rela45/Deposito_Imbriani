@@ -70,5 +70,4 @@ public class DisplayMobile : IObserver
         Console.WriteLine($"{_nome} ha ricevuto aggiornamenti meteo {nuovoMessaggio}");
     }
 
-
 }
