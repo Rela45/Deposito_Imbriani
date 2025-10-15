@@ -73,14 +73,13 @@ public class ConLatte : Decorator
 
     public override double Costo()
     {
-        Console.WriteLine($"Costo caffe normale {_costo}");
-        Console.WriteLine($"Costo con Latte :");
-        return base.Costo();
+        return base.Costo() + _costo;
     }
+
     public override void Descrizione()
     {
         base.Descrizione();
-        Console.WriteLine($"Latte");
+        Console.WriteLine(" + Latte");
     }
 }
 
@@ -94,14 +93,13 @@ public class ConCioccolato : Decorator
 
     public override double Costo()
     {
-        Console.WriteLine($"Costo caffe normale {_costo}");
-        
-        return base.Costo();
+        return base.Costo() + _costo;
     }
+
     public override void Descrizione()
     {
-        Console.WriteLine($"Cioccolato");
         base.Descrizione();
+        Console.WriteLine(" + Cioccolato");
     }
 }
 
@@ -115,17 +113,15 @@ public class ConPanna : Decorator
 
     public override double Costo()
     {
-        Console.WriteLine($"Costo caffe normale {_costo}");
-        Console.WriteLine($"Costo con Panna :");
-        return base.Costo();
+        return base.Costo() + _costo;
     }
+
     public override void Descrizione()
     {
         base.Descrizione();
-        Console.WriteLine($"Panna");
+        Console.WriteLine(" + Panna");
     }
 }
-
 
 
 #endregion
@@ -136,16 +132,19 @@ internal class Program
 {
     public static void Main(string[] args)
     {
+         // Base
         IBevanda bevanda = new Caffe(2);
-        bevanda.Costo();
+
+        // Decorazioni
+        bevanda = new ConLatte(bevanda, 0.5);
+        bevanda = new ConCioccolato(bevanda, 0.7);
+        bevanda = new ConPanna(bevanda, 0.6);
+
+        // Stampa descrizione e costo
+        Console.WriteLine("Descrizione:");
         bevanda.Descrizione();
 
-        IBevanda decorator1 = new ConCioccolato(bevanda, 2);
-        decorator1.Descrizione();
-        decorator1.Costo();
-
-        double costototale = bevanda.Costo() + decorator1.Costo();
-        Console.WriteLine($"Costo Totale : {costototale}");
+        Console.WriteLine($"Costo Totale: {bevanda.Costo()}");
         
     }
 }
