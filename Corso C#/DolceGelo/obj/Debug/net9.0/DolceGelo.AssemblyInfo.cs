@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DolceGelo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d92ec7959a8aab0e831e4d57c30197026f042c0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+20bbd2abd858aa56ab756e450bfafbfbb362df22")]
 [assembly: System.Reflection.AssemblyProductAttribute("DolceGelo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DolceGelo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
