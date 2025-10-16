@@ -131,6 +131,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EsempioStrategy", "Corso C#
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrategyCalcolatrice", "Corso C#\Giovedi 16\Mattina\StrategyCalcolatrice\StrategyCalcolatrice.csproj", "{9691587B-968E-48FB-A761-F567ED4F233B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chef", "Corso C#\Giovedi 16\Mattina\Chef\Chef.csproj", "{76995F06-43DB-4A7C-A3CF-F5E5280EAD51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -525,6 +527,18 @@ Global
 		{9691587B-968E-48FB-A761-F567ED4F233B}.Release|x64.Build.0 = Release|Any CPU
 		{9691587B-968E-48FB-A761-F567ED4F233B}.Release|x86.ActiveCfg = Release|Any CPU
 		{9691587B-968E-48FB-A761-F567ED4F233B}.Release|x86.Build.0 = Release|Any CPU
+		{76995F06-43DB-4A7C-A3CF-F5E5280EAD51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76995F06-43DB-4A7C-A3CF-F5E5280EAD51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76995F06-43DB-4A7C-A3CF-F5E5280EAD51}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{76995F06-43DB-4A7C-A3CF-F5E5280EAD51}.Debug|x64.Build.0 = Debug|Any CPU
+		{76995F06-43DB-4A7C-A3CF-F5E5280EAD51}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{76995F06-43DB-4A7C-A3CF-F5E5280EAD51}.Debug|x86.Build.0 = Debug|Any CPU
+		{76995F06-43DB-4A7C-A3CF-F5E5280EAD51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76995F06-43DB-4A7C-A3CF-F5E5280EAD51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76995F06-43DB-4A7C-A3CF-F5E5280EAD51}.Release|x64.ActiveCfg = Release|Any CPU
+		{76995F06-43DB-4A7C-A3CF-F5E5280EAD51}.Release|x64.Build.0 = Release|Any CPU
+		{76995F06-43DB-4A7C-A3CF-F5E5280EAD51}.Release|x86.ActiveCfg = Release|Any CPU
+		{76995F06-43DB-4A7C-A3CF-F5E5280EAD51}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -593,6 +607,7 @@ Global
 		{1D10CFE1-C169-E041-2E34-83D63C8A6876} = {47D2FAF0-ABC4-D79D-80CA-B4684EFFF717}
 		{449D7507-9996-4CF8-BD2F-4815899F4700} = {1D10CFE1-C169-E041-2E34-83D63C8A6876}
 		{9691587B-968E-48FB-A761-F567ED4F233B} = {1D10CFE1-C169-E041-2E34-83D63C8A6876}
+		{76995F06-43DB-4A7C-A3CF-F5E5280EAD51} = {1D10CFE1-C169-E041-2E34-83D63C8A6876}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6DD4E2A0-0805-4325-A35D-9D0E72656C6A}
