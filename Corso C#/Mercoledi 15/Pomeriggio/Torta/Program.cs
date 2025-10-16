@@ -35,6 +35,10 @@ public class TortaFrutta : ITorta
 public abstract class Decoratore : ITorta
 {
     protected ITorta baseTorta;
+    protected Decoratore(ITorta torta)
+    {
+        baseTorta = torta;
+    }
     public virtual string Descrizione()
     {
         return baseTorta.Descrizione();
@@ -45,6 +49,10 @@ public abstract class Decoratore : ITorta
 
 public class ConPanna : Decoratore
 {
+    public ConPanna(ITorta torta) : base(torta)
+    {
+    }
+
     public override string Descrizione()
     {
         return base.Descrizione() + "Con Panna";
@@ -53,6 +61,10 @@ public class ConPanna : Decoratore
 
 public class ConFragole : Decoratore
 {
+    public ConFragole(ITorta torta) : base(torta)
+    {
+    }
+
     public override string Descrizione()
     {
         return base.Descrizione() + "Con Fragole";
@@ -61,6 +73,10 @@ public class ConFragole : Decoratore
 
 public class ConGlassa : Decoratore
 {
+    public ConGlassa(ITorta torta) : base(torta)
+    {
+    }
+
     public override string Descrizione()
     {
         return base.Descrizione() + "Con Glassa";
@@ -94,9 +110,12 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        
         Console.WriteLine($"Scegli il tipo di torta che vuoi creare");
         string? tipoTorta = Console.ReadLine();
-
+        ITorta torta = TortaFactory.CreaTortaBase(tipoTorta);
+        Console.WriteLine(torta.Descrizione());
+        
         // TortaFactory nuovaTorta.CreaTortaBase(tipoTorta);   QUESTO NON FUNZIONA DEVO COMPLETARE
         
     }
