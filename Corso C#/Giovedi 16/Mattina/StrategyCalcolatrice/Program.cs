@@ -35,6 +35,10 @@ public class DivisioneStrategia : IStrategiaOperazione
 {
     public double Calcola(double a, double b)
     {
+        if (a == 0)
+        {
+            Console.WriteLine($"Il primo dividendo non può essere 0");
+        }
         return a / b;
     }
 }
@@ -70,25 +74,34 @@ public class Calcolatrice
 
 #endregion
 #region Utente
-public sealed class Utente
+public sealed class User
 {
-    private static Utente _instance;
-    private Utente()
+    private static User? istanza;
+    private List<double> risultati = new List<double>();
+    private User() { }
+    public static User GetIstanza()
     {
+        if (istanza == null)
+        {
+            istanza = new User();
+        }
+        return istanza;
     }
 
-    public static Utente Instance
+    public void AggiungiRisultato(double risultato)
     {
-        get
+        risultati.Add(risultato);
+    }
+
+    public void StampaRisultati()
+    {
+        foreach (var risultato in risultati)
         {
-            if (_instance == null)
-            {
-                _instance = new Utente();
-            }
-            return _instance;
+            Console.WriteLine(risultato);
         }
     }
 }
+
 #endregion
 #region MAIN
 class Program
