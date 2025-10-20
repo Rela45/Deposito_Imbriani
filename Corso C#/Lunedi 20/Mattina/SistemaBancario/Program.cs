@@ -1,12 +1,14 @@
 ﻿#region Singleton
 using System.Diagnostics.Contracts;
 using System.Dynamic;
+using System.Runtime.CompilerServices;
+using Microsoft.VisualBasic;
 
 public sealed class BankContext
 {
     private static  BankContext _instance;
-    
-    
+    private readonly List<IObserver> _observer = new();
+    public ICalcoloInteressi Strategy { get; private set; } = new StandardStrategy();
     private BankContext()
     {
     }
@@ -21,6 +23,14 @@ public sealed class BankContext
     public Dictionary<int, Cliente> Clienti = new();
     public Dictionary<int, IConto> Conti = new();
 
+    public Dictionary<int, List<Operazione>> operazioni = new();
+
+    public void SetStrategy(ICalcoloInteressi strategy)
+    {
+        Strategy = strategy ?? throw new ArgumentNullException(nameof(strategy));
+        Notify("nuova strategia settata");
+    }
+
     public int nuovoConto()
     {
         return ContoID++;
@@ -29,6 +39,20 @@ public sealed class BankContext
     public int nuovoCliente()
     {
         return ClienteID++;
+    }
+
+    public void Subscribe(IObserver obs)
+    {
+        if (obs == null) return;
+        _observer.Add(obs);
+    }
+
+    public void Notify(string messaggio)
+    {
+        foreach(var obv in _observer)
+        {
+            obv.Notify(messaggio);
+        }
     }
 
 }
@@ -78,10 +102,10 @@ public abstract class Conto : IConto
     public int ClienteId { get; }
     public string Tipo { get; set; }
     public decimal Saldo { get; set; }
-    protected Conto(int id, int ClienteId, string Tipo, decimal Saldo = 0m)
+    protected Conto(int id, int clienteId, string Tipo, decimal Saldo = 0m)
     {
         Id = id;
-        this.ClienteId = ClienteId;
+        this.ClienteId = clienteId;
         this.Tipo = Tipo;
         this.Saldo = Saldo;
 
@@ -98,7 +122,7 @@ public abstract class Conto : IConto
         }
     }
 
-    public bool Preleva(decimal importo)
+    public virtual  bool Preleva(decimal importo)
     {
         if (importo < 0) return false;
         if (Saldo < importo) return false;
@@ -131,7 +155,7 @@ public class ContoStudent : Conto
 }
 #endregion
 #region Factory
-public static class CreaConto
+public static class ContoFactory
 {
     public static IConto Crea(string Tipo, int ClienteId)
     {
@@ -158,9 +182,6 @@ public static class CreaConto
 
 
 #endregion
-
-
-
 
 #region Strategy 
 public interface ICalcoloInteressi
@@ -210,29 +231,128 @@ public class PromoStrategy : ICalcoloInteressi
 
 #endregion
 
-
-
 #region Observer 
 public interface IObserver
 {
-    void Notify();
+    void Notify(string messaggio);
 }
 
 public class Logger : IObserver
 {
-    public void Notify()
+    public void Notify(string messaggio)
     {
-        Console.WriteLine($"[{DateTime.Now:HH:MM:ss}] nuova operazione cominciata");
-        
+        Console.WriteLine($"[{DateTime.Now:HH:MM:ss}] {messaggio}"); 
     }
 }
-public static class BankService
+public class BankService
 {
     private static BankContext ctx = BankContext.Instance;
 
+
+    public static Cliente CreaCliente(string nome, string email)
+    {
+        int id = ctx.nuovoCliente();
+        var cliente = new Cliente(id, nome, email);
+        ctx.Clienti.Add(id, cliente);  //vado ad inserire nel "database" (dictionary) il nuovo cliente creato
+        ctx.Notify("nuovo cliente creato");
+        return cliente;
+    }
+
+    public static IConto CreaConto(int clienteId, string tipo)
+    {
+        if (!ctx.Clienti.ContainsKey(clienteId))
+        {
+            throw new ArgumentException("Cliente inesistente");
+        }
+
+        var conto = ContoFactory.Crea(tipo, clienteId);
+        ctx.Conti.Add(conto.Id, conto);
+        ctx.Notify("nuovo conto creato");
+        return conto;
+    }
+
+    private static void AggiungiOperazione(int contoId, string tipo, decimal importo, string descrizione)
+    {
+        ctx.operazioni[contoId].Add(new Operazione
+        {
+            Tipo = tipo,
+            Importo = importo,
+            Descrizione = descrizione
+        });
+    }
+
+    public static void Deposita(int contoId, decimal importo)
+    {
+        if (!ctx.Conti.TryGetValue(contoId, out var conto))
+        {
+            throw new ArgumentException("Conto inesistente");
+        }
+        conto.Deposita(importo);
+        AggiungiOperazione(contoId, "Deposito", importo, "contanti");
+        ctx.Notify($"Depositati {importo} in contanti");
+    }
+    
+    public static bool Preleva(int contoId, decimal importo)
+    {
+        if (!ctx.Conti.TryGetValue(contoId, out var conto))
+        {
+            throw new ArgumentException("Conto inesistente");
+        }
+
+        bool ok = conto.Preleva(importo);
+        if (ok)
+        {
+            AggiungiOperazione(contoId, "Preleva", importo, "contanti");
+            ctx.Notify("Contanti prelevati correttamente");
+        }
+        else
+        {
+            ctx.Notify("Prelievo rifiutato, saldo non sufficente");
+        }
+
+        return ok; 
+
+    }
+    public static void ApplicaInteressiATutti()
+    {
+        foreach (var kv in ctx.Conti)
+        {
+            var conto = kv.Value;
+            var delta = ctx.Strategy.CalcolaDeltaInteressi(conto);
+            if (delta != 0)
+            {
+                conto.Deposita(delta);
+                AggiungiOperazione(conto.Id, "interessi", delta, "in base alla strategia");
+            }
+        }
+    }
+
+    public static void StampaOperazioniConto(int contoId)
+    {
+        if (!ctx.operazioni.ContainsKey(contoId))
+        {
+            Console.WriteLine($"Nessuna operazione per conto {contoId}");
+            return;
+        }
+
+        Console.WriteLine($"\n== Operazioni conto {contoId} ==");
+        foreach (var op in ctx.operazioni[contoId])
+            Console.WriteLine($"{op.Timestamp:yyyy-MM-dd HH:mm:ss} | {op.Tipo,-12} | {op.Importo,8:0.00} | {op.Descrizione}");
+    }
+    
+    public static void ReportBanca()
+    {
+        Console.WriteLine("\n== Report banca ==");
+        decimal totale = 0m;
+        foreach (var c in ctx.Conti.Values)
+        {
+            totale += c.Saldo;
+            Console.WriteLine($"Conto {c.Id} ({c.Tipo}) Cliente {c.ClienteId} -> Saldo: {c.Saldo:0.00}");
+        }
+        Console.WriteLine($"Totale saldi: {totale:0.00}");
+    }
 }
 #endregion
-
 
 
 #region MAIN
@@ -240,7 +360,34 @@ class Program
 {
     static void Main(string[] args)
     {
+        var Ctx = BankContext.Instance;
 
+        Ctx.Subscribe(new Logger());
+
+        var alice = BankService.CreaCliente("Alice", "alice@example.com");
+        var bob   = BankService.CreaCliente("Bob",   "bob@example.com");
+        var carol = BankService.CreaCliente("Carol", "carol@example.com");
+
+        // 2) Conti (Factory)
+        var c1 = BankService.CreaConto(alice.Id, "BASE");
+        var c2 = BankService.CreaConto(bob.Id,   "PREMIUM");
+        var c3 = BankService.CreaConto(carol.Id, "STUDENT");
+
+        // 3) Movimenti base
+        BankService.Deposita(c1.Id, 500m);
+        BankService.Deposita(c2.Id, 1200m);
+        BankService.Deposita(c3.Id, 300m);
+
+        BankService.Preleva(c1.Id, 100m);
+        
+
+        // 4) Strategy: cambio e interessi
+        Ctx.SetStrategy(new PromoStrategy());
+        BankService.ApplicaInteressiATutti();
+        
+
+        Console.WriteLine("\nFine demo. Premi Invio per uscire.");
+        Console.ReadLine();
     }
 }
 
