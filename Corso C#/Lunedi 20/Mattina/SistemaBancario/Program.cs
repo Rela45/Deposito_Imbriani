@@ -6,20 +6,17 @@ using Microsoft.VisualBasic;
 
 public sealed class BankContext
 {
-    private static  BankContext _instance;
+    private static readonly Lazy<BankContext> _lazy = new(() => new BankContext());
+    public static BankContext Instance => _lazy.Value;
     private readonly List<IObserver> _observer = new();
     public ICalcoloInteressi Strategy { get; private set; } = new StandardStrategy();
     private BankContext()
     {
     }
-    public static BankContext Instance
-    {
-        get { return _instance; }
-        set { _instance = value; }
-    }
 
     public int ClienteID = 1;
     public int ContoID = 100;
+
     public Dictionary<int, Cliente> Clienti = new();
     public Dictionary<int, IConto> Conti = new();
 
@@ -361,7 +358,6 @@ class Program
     static void Main(string[] args)
     {
         var Ctx = BankContext.Instance;
-
         Ctx.Subscribe(new Logger());
 
         var alice = BankService.CreaCliente("Alice", "alice@example.com");
