@@ -19,7 +19,6 @@ public sealed class BankContext
     public Dictionary<int, Cliente> Clienti = new();
     public Dictionary<int, IConto> Conti = new();
 
-    public Dictionary<int, List<int, >>
 }
 #endregion
 
@@ -44,30 +43,67 @@ public interface IConto
     int Id { get; }
     int ClienteId { get; }
     string Tipo { get; }
-    decimal Saldo { get; }
+    decimal Saldo { get; set; }
     void Deposita(decimal importo);
     bool Preleva(decimal importo);
 }
 #endregion
 #region ConcreteClass
-public class Conto : IConto
+public abstract class Conto : IConto
 {
-    public int Id => throw new NotImplementedException();
-
-    public int ClienteId => throw new NotImplementedException();
-
-    public string Tipo => throw new NotImplementedException();
-
-    public decimal Saldo => throw new NotImplementedException();
-
-    public void Deposita(decimal importo)
+    public int Id { get; }
+    public int ClienteId { get; }
+    public string Tipo { get; }
+    public decimal Saldo { get; set; }
+    protected Conto(int id, int ClienteId, string Tipo, decimal Saldo)
     {
-        throw new NotImplementedException();
+        Id = id;
+        this.ClienteId = ClienteId;
+        this.Tipo = Tipo;
+        this.Saldo = Saldo;
+
+    }
+    public virtual void Deposita(decimal importo)
+    {
+        if (importo < 0)
+        {
+            Console.WriteLine($"l'importo non puo essere minore di 0");
+        }
+        else
+        {
+            Saldo += importo;
+        }
     }
 
     public bool Preleva(decimal importo)
     {
-        throw new NotImplementedException();
+        if (importo < 0) return false;
+        if (Saldo < importo) return false;
+        Saldo -= importo;
+        Console.WriteLine($"Importo prelevato");
+
+        return true;
+    }
+}
+
+public class ContoBase : Conto
+{
+    public ContoBase(int id, int ClienteId, string Tipo, decimal Saldo) : base(id, ClienteId, "ContoBase", Saldo)
+    {
+    }
+}
+
+public class ContoPremium : Conto
+{
+    public ContoPremium(int id, int ClienteId, string Tipo, decimal Saldo) : base(id, ClienteId, "Conto Premium", Saldo)
+    {
+    }
+}
+
+public class ContoStudent : Conto
+{
+    public ContoStudent(int id, int ClienteId, string Tipo, decimal Saldo) : base(id, ClienteId, "Conto Student", Saldo)
+    {
     }
 }
 #endregion
