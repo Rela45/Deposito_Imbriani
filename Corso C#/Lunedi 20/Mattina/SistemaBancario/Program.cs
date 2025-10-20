@@ -264,19 +264,25 @@ public class BankService
 
         var conto = ContoFactory.Crea(tipo, clienteId);
         ctx.Conti.Add(conto.Id, conto);
-        ctx.Notify("nuovo conto creato");
+        ctx.Notify($"nuovo conto di tipo: {tipo} creato");
         return conto;
     }
 
     private static void AggiungiOperazione(int contoId, string tipo, decimal importo, string descrizione)
+{
+    if (!ctx.operazioni.ContainsKey(contoId))
     {
-        ctx.operazioni[contoId].Add(new Operazione
-        {
-            Tipo = tipo,
-            Importo = importo,
-            Descrizione = descrizione
-        });
+        ctx.operazioni[contoId] = new List<Operazione>();
     }
+
+    ctx.operazioni[contoId].Add(new Operazione
+    {
+        Tipo = tipo,
+        Importo = importo,
+        Descrizione = descrizione
+    });
+    
+}
 
     public static void Deposita(int contoId, decimal importo)
     {
@@ -362,17 +368,17 @@ class Program
 
         var alice = BankService.CreaCliente("Alice", "alice@example.com");
         var bob   = BankService.CreaCliente("Bob",   "bob@example.com");
-        var carol = BankService.CreaCliente("Carol", "carol@example.com");
+        
 
         // 2) Conti (Factory)
-        var c1 = BankService.CreaConto(alice.Id, "BASE");
-        var c2 = BankService.CreaConto(bob.Id,   "PREMIUM");
-        var c3 = BankService.CreaConto(carol.Id, "STUDENT");
+        var c1 = BankService.CreaConto(alice.Id, "base");
+        var c2 = BankService.CreaConto(bob.Id,   "premium");
+        
 
         // 3) Movimenti base
         BankService.Deposita(c1.Id, 500m);
         BankService.Deposita(c2.Id, 1200m);
-        BankService.Deposita(c3.Id, 300m);
+        
 
         BankService.Preleva(c1.Id, 100m);
         
