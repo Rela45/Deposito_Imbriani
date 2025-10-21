@@ -83,11 +83,9 @@ public class MessaggioService
 
 
 #endregion
-
-#region Main
-class Program
+public class Run
 {
-    static void Main(string[] args)
+    public void Execute()
     {
         Console.WriteLine("Seleziona il tipo di notifica (Email, Sms, Push):");
         string? input = Console.ReadLine();
@@ -102,7 +100,30 @@ class Program
         INotifier notifier = NotifierFactory.CreateNotify(tipoNotifica);
         var service = new MessaggioService(notifier);
         service.MessageSent("Ciao!");
+    }
+}
 
+#region Main
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Console.WriteLine("Seleziona il tipo di notifica (Email, Sms, Push):");
+        // string? input = Console.ReadLine();
+
+        // if (!Enum.TryParse(input, ignoreCase: true, out TipoNotifica tipoNotifica))
+        // {
+        //     Console.WriteLine("Tipo di notifica non valido.");
+        //     return;
+        // }
+
+        // // Factory
+        // INotifier notifier = NotifierFactory.CreateNotify(tipoNotifica);
+        // var service = new MessaggioService(notifier);
+        // service.MessageSent("Ciao!");
+
+        Run run = new Run();
+        run.Execute();
     }
 }
 
