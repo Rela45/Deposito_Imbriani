@@ -1,0 +1,54 @@
+﻿
+#region Interface
+public interface Security
+{
+    void SecurityAccess(LivelloAccesso accesso);
+}
+
+#endregion
+public enum LivelloAccesso
+{
+    Rookie,
+    Midlevel,
+    Pro
+}
+#region LivelloAccesso
+public class Access : Security
+{
+    public void SecurityAccess(LivelloAccesso accesso)
+    {
+        switch (accesso)
+        {
+            case LivelloAccesso.Rookie:
+                Console.WriteLine($"Il tuo livello è Rookie i tuoi sono privilegi minimi");
+                break;
+            case LivelloAccesso.Midlevel:
+                Console.WriteLine($"Il tuo livello è Mid puoi accedere a privilegi di alto livello");
+                break;
+            case LivelloAccesso.Pro:
+                Console.WriteLine($"Il tuo livello è Pro hai accesso completo");
+                
+                break;
+        }
+    }
+}
+#endregion
+
+
+
+#region MAIN 
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        var accesso = new Access();
+        string input = Console.ReadLine();
+        // if (Enum.Parse(input, out accesso))
+        // {
+            
+        // }
+    }
+}
+
+#endregion
