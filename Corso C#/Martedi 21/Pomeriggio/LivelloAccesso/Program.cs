@@ -27,7 +27,6 @@ public class Access : Security
                 break;
             case LivelloAccesso.Pro:
                 Console.WriteLine($"Il tuo livello è Pro hai accesso completo");
-                
                 break;
         }
     }
