@@ -43,11 +43,21 @@ class Program
     static void Main(string[] args)
     {
         var accesso = new Access();
+        Console.WriteLine($"inserisci Il tuo livello");
+        
         string input = Console.ReadLine();
-        // if (Enum.Parse(input, out accesso))
-        // {
-            
-        // }
+        switch (input)
+        {
+            case "Rookie":
+                accesso.SecurityAccess(LivelloAccesso.Rookie);
+                break;
+            case "Mid":
+                accesso.SecurityAccess(LivelloAccesso.Midlevel);
+                break;
+            case "Pro":
+                accesso.SecurityAccess(LivelloAccesso.Pro);
+                break;
+        }
     }
 }
 
