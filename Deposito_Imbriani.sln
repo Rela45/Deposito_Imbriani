@@ -173,6 +173,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mattina", "Mattina", "{73EE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Printer", "Corso C#\Martedi 21\Mattina\Printer\Printer.csproj", "{9385167F-8180-47F5-8EE5-476FFACBF5C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUploader", "Corso C#\Martedi 21\Mattina\FileUploader\FileUploader.csproj", "{A1E70457-ADA8-4C4E-A45F-701308268494}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -699,6 +701,18 @@ Global
 		{9385167F-8180-47F5-8EE5-476FFACBF5C8}.Release|x64.Build.0 = Release|Any CPU
 		{9385167F-8180-47F5-8EE5-476FFACBF5C8}.Release|x86.ActiveCfg = Release|Any CPU
 		{9385167F-8180-47F5-8EE5-476FFACBF5C8}.Release|x86.Build.0 = Release|Any CPU
+		{A1E70457-ADA8-4C4E-A45F-701308268494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1E70457-ADA8-4C4E-A45F-701308268494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1E70457-ADA8-4C4E-A45F-701308268494}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A1E70457-ADA8-4C4E-A45F-701308268494}.Debug|x64.Build.0 = Debug|Any CPU
+		{A1E70457-ADA8-4C4E-A45F-701308268494}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A1E70457-ADA8-4C4E-A45F-701308268494}.Debug|x86.Build.0 = Debug|Any CPU
+		{A1E70457-ADA8-4C4E-A45F-701308268494}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1E70457-ADA8-4C4E-A45F-701308268494}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1E70457-ADA8-4C4E-A45F-701308268494}.Release|x64.ActiveCfg = Release|Any CPU
+		{A1E70457-ADA8-4C4E-A45F-701308268494}.Release|x64.Build.0 = Release|Any CPU
+		{A1E70457-ADA8-4C4E-A45F-701308268494}.Release|x86.ActiveCfg = Release|Any CPU
+		{A1E70457-ADA8-4C4E-A45F-701308268494}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -788,6 +802,7 @@ Global
 		{3BEE5300-E1A0-B63F-3949-1124B87B4AC2} = {3A534CF1-20F2-5A7F-E83C-21D8FC2DBCE8}
 		{73EE9F30-CCB4-0295-EEB7-71895E04167F} = {3BEE5300-E1A0-B63F-3949-1124B87B4AC2}
 		{9385167F-8180-47F5-8EE5-476FFACBF5C8} = {73EE9F30-CCB4-0295-EEB7-71895E04167F}
+		{A1E70457-ADA8-4C4E-A45F-701308268494} = {73EE9F30-CCB4-0295-EEB7-71895E04167F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6DD4E2A0-0805-4325-A35D-9D0E72656C6A}
