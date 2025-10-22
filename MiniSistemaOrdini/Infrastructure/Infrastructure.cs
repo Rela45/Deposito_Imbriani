@@ -3,9 +3,9 @@ namespace Infrastructure
     using System.Collections.Generic;
     using Domain;
     #region InMemoryProduct
-/// <summary>
-/// Gestisco le classi concrete delle interfacce, utilizzo i loro metodi e poi li richiamo dove servono
-/// </summary>
+    /// <summary>
+    /// Gestisco le classi concrete delle interfacce, utilizzo i loro metodi e poi li richiamo dove servono
+    /// </summary>
     public class InMemoryProductRepo : IProductRepository
     {
         private readonly Dictionary<string, Product> _memorizedProducts = new(StringComparer.OrdinalIgnoreCase);
@@ -26,7 +26,9 @@ namespace Infrastructure
         }
     }
     #endregion
-#region InMemoryOrder
+
+    #region InMemoryOrder
+
     public class InMemoryOrderRepo : IOrderRepository
     {
         private readonly Dictionary<int, Order> _memorizedOrders = new();
@@ -50,6 +52,16 @@ namespace Infrastructure
         {
             Console.WriteLine($"Update dell'ordine riuscito {_memorizedOrders[order.Id]} = {order}");
         }
-#endregion
+        #endregion
+
+        #region ServiceNotification
+        public class ConsoleNotification : INotificationService
+        {
+            public void Send(string subject, string body)
+            {
+                Console.WriteLine($"[NOTIFICA]: {subject}\n{body}");
+            }
+        }
+        #endregion
     }
-}   
+}
