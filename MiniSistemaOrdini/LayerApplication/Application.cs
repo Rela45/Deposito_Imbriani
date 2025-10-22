@@ -1,7 +1,7 @@
 namespace LayerApplication
 {
     using Domain;
-
+    #region ProductService
     public class ProductService
     {
         private readonly IProductRepository _products;
@@ -19,7 +19,8 @@ namespace LayerApplication
         public Product Require(string code) => _products.GetByCode(code)
             ?? throw new InvalidOperationException("Prodotto inesistente.");
     }
-
+    #endregion
+    #region OrderService
     public class OrderService
     {
         private readonly ProductService productService;
@@ -35,7 +36,14 @@ namespace LayerApplication
             _configurationProvider = configurationProvider;
         }
 
-        // public Order CreateOrder()
+        public void CreateOrder(Order order)
+        {
+            _orderRepository.Add(order);
+            _notificationService.Send("Nuovo ordine creato", $"N.Ordine {order.Id}");
+        }
+
     }
+    #endregion
+
 }
 

@@ -31,8 +31,33 @@ namespace Domain
             if (quantity <= 0) throw new ArgumentException("La quantita deve essere maggiore di 0");
             _items.Add(new OrderItem(p, quantity));
         }
+
         
-        public void ChangeStatus(OrderStatus status) => Status = status;
+
+        public void Pay()
+        {
+            if (Status != OrderStatus.New) { Console.WriteLine($"Puoi pagare solo ordini nuovi"); }
+            Status = OrderStatus.Paid;
+        }
+
+        public void Ship()
+        {
+            if (Status != OrderStatus.Paid)
+            {
+                Console.WriteLine($"Solo ordini pagati possono essere spediti");
+                Status = OrderStatus.Shipped;
+            }
+        }
+        public void Cancel()
+        {
+            if (Status != OrderStatus.Shipped)
+            {
+                Console.WriteLine("Non puoi annullare un ordine gia spedito");
+            }
+            Status = OrderStatus.Cancelled;
+        }
+
+        public decimal SubTotal() => _items.Sum(i => i.LineTotal);
 
     }
 
@@ -55,7 +80,7 @@ namespace Domain
 
     public interface INotificationService
     {
-        void Send(string subject, string body, string to);
+        void Send(string subject, string body);
     }
 
     public interface IConfigurationProvider
