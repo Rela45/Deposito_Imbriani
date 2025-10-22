@@ -1,6 +1,8 @@
 ﻿#region MAIN
 using System.Runtime.InteropServices;
 using Domain;
+using Infrastructure;
+using LayerApplication;
 
 internal class Program
 {
@@ -9,8 +11,9 @@ internal class Program
         var config = Configurazione.Instance;
 
         var prodotti = new List<Product>();
+        // var prodotti = new ProductService();           //stavo provando cose, mi sono accorto di aver semplificato il main come nell'esercizio easy guidato e non ho usato application e infrastructure 
         var ordini = new List<Order>();
-
+        // var ordini = new OrderService()
         prodotti.Add(new Product("PEN", "Penna Blu", 1.50m));
         prodotti.Add(new Product("NBK", "Taccuino", 4.20m));
         prodotti.Add(new Product("MUG", "Tazza Logo", 8.90m));
@@ -23,7 +26,7 @@ internal class Program
 
         bool continua = true;
         Console.WriteLine($"Inserisci il tuo nome per cominciare l'ordine");
-        string nome = Console.ReadLine();
+        string? nome = Console.ReadLine();
         var ordine = new Order(nome);
         ordini.Add(ordine);
         Console.WriteLine($"\nOrdine creato (ID: {ordine.Id}) per {ordine.Customer}");

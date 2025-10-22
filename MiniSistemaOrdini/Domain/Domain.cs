@@ -57,8 +57,8 @@ namespace Domain
             if (Status != OrderStatus.Paid)
             {
                 Console.WriteLine($"Solo ordini pagati possono essere spediti");
-                Status = OrderStatus.Shipped;
             }
+            Status = OrderStatus.Shipped;
         }
         public void Cancel()
         {
