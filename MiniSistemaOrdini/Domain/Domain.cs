@@ -1,5 +1,17 @@
 namespace Domain
 {
+    public sealed class Configurazione
+{
+    private static readonly Lazy<Configurazione> _lazy =
+        new Lazy<Configurazione>(() => new Configurazione());
+
+    public static Configurazione Instance => _lazy.Value;
+
+    public decimal TaxRate { get; } = 0.22m;
+    public string Currency { get; } = "EUR";
+
+    private Configurazione() { }
+}
 
     public enum OrderStatus { New, Paid, Shipped, Cancelled }
     public record Product(string Code, string Name, decimal Price);
