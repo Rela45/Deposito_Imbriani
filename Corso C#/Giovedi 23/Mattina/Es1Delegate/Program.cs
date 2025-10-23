@@ -1,8 +1,6 @@
 ﻿
 
-
 #region MAIN
-
 
 class Program
 {
@@ -53,6 +51,5 @@ class Program
         Console.WriteLine($"[LOG] {messaggio}");
     }
 }
-
 
 #endregion

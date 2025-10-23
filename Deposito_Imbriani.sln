@@ -205,6 +205,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mattina", "Mattina", "{76AA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Es1Delegate", "Corso C#\Giovedi 23\Mattina\Es1Delegate\Es1Delegate.csproj", "{797A1343-68BE-43AB-8848-10513C369346}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniAppPagamenti", "Corso C#\Giovedi 23\Mattina\MiniAppPagamenti\MiniAppPagamenti.csproj", "{25BDAD18-1AE7-47A3-9DF7-5A76A4D936C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -887,6 +889,18 @@ Global
 		{797A1343-68BE-43AB-8848-10513C369346}.Release|x64.Build.0 = Release|Any CPU
 		{797A1343-68BE-43AB-8848-10513C369346}.Release|x86.ActiveCfg = Release|Any CPU
 		{797A1343-68BE-43AB-8848-10513C369346}.Release|x86.Build.0 = Release|Any CPU
+		{25BDAD18-1AE7-47A3-9DF7-5A76A4D936C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25BDAD18-1AE7-47A3-9DF7-5A76A4D936C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25BDAD18-1AE7-47A3-9DF7-5A76A4D936C9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{25BDAD18-1AE7-47A3-9DF7-5A76A4D936C9}.Debug|x64.Build.0 = Debug|Any CPU
+		{25BDAD18-1AE7-47A3-9DF7-5A76A4D936C9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{25BDAD18-1AE7-47A3-9DF7-5A76A4D936C9}.Debug|x86.Build.0 = Debug|Any CPU
+		{25BDAD18-1AE7-47A3-9DF7-5A76A4D936C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25BDAD18-1AE7-47A3-9DF7-5A76A4D936C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25BDAD18-1AE7-47A3-9DF7-5A76A4D936C9}.Release|x64.ActiveCfg = Release|Any CPU
+		{25BDAD18-1AE7-47A3-9DF7-5A76A4D936C9}.Release|x64.Build.0 = Release|Any CPU
+		{25BDAD18-1AE7-47A3-9DF7-5A76A4D936C9}.Release|x86.ActiveCfg = Release|Any CPU
+		{25BDAD18-1AE7-47A3-9DF7-5A76A4D936C9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -991,6 +1005,7 @@ Global
 		{47FBB512-B731-4EC8-CE50-AA65D52881A9} = {3A534CF1-20F2-5A7F-E83C-21D8FC2DBCE8}
 		{76AA33FE-B61D-0783-2AED-4A73DE6410C4} = {47FBB512-B731-4EC8-CE50-AA65D52881A9}
 		{797A1343-68BE-43AB-8848-10513C369346} = {76AA33FE-B61D-0783-2AED-4A73DE6410C4}
+		{25BDAD18-1AE7-47A3-9DF7-5A76A4D936C9} = {76AA33FE-B61D-0783-2AED-4A73DE6410C4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6DD4E2A0-0805-4325-A35D-9D0E72656C6A}
