@@ -8,6 +8,7 @@
 #region Interfaces
 public interface IPagamento
 {
+    string TipoPagamento{ get; }
     void PaymentProcess();
 }
 
@@ -27,6 +28,8 @@ public interface IDiscountPolicy
 #region Classi Interfacce
 public class PaymentPaypal : IPagamento
 {
+    public string TipoPagamento { get; set; } = "Paypal";
+
     public void PaymentProcess()
     {
         Console.WriteLine($"Pagamento con Paypal");
@@ -35,6 +38,7 @@ public class PaymentPaypal : IPagamento
 
 public class PaymentBonifico : IPagamento
 {
+    public string TipoPagamento { get; set; } = "Bonifico";
     public void PaymentProcess()
     {
         Console.WriteLine($"Pagamento con Bonifico");
@@ -43,6 +47,7 @@ public class PaymentBonifico : IPagamento
 
 public class PaymentCarta : IPagamento
 {
+    public string TipoPagamento { get; set; } = "Carta";
     public void PaymentProcess()
     {
         Console.WriteLine($"Pagamento con Carta");
