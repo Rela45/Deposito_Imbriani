@@ -207,6 +207,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Es1Delegate", "Corso C#\Gio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniAppPagamenti", "Corso C#\Giovedi 23\Mattina\MiniAppPagamenti\MiniAppPagamenti.csproj", "{25BDAD18-1AE7-47A3-9DF7-5A76A4D936C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBConsoleApp", "DBConsoleApp\DBConsoleApp.csproj", "{F036E7C0-0744-4D33-B9D8-4D1FCDF7B05D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -901,6 +903,18 @@ Global
 		{25BDAD18-1AE7-47A3-9DF7-5A76A4D936C9}.Release|x64.Build.0 = Release|Any CPU
 		{25BDAD18-1AE7-47A3-9DF7-5A76A4D936C9}.Release|x86.ActiveCfg = Release|Any CPU
 		{25BDAD18-1AE7-47A3-9DF7-5A76A4D936C9}.Release|x86.Build.0 = Release|Any CPU
+		{F036E7C0-0744-4D33-B9D8-4D1FCDF7B05D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F036E7C0-0744-4D33-B9D8-4D1FCDF7B05D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F036E7C0-0744-4D33-B9D8-4D1FCDF7B05D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F036E7C0-0744-4D33-B9D8-4D1FCDF7B05D}.Debug|x64.Build.0 = Debug|Any CPU
+		{F036E7C0-0744-4D33-B9D8-4D1FCDF7B05D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F036E7C0-0744-4D33-B9D8-4D1FCDF7B05D}.Debug|x86.Build.0 = Debug|Any CPU
+		{F036E7C0-0744-4D33-B9D8-4D1FCDF7B05D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F036E7C0-0744-4D33-B9D8-4D1FCDF7B05D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F036E7C0-0744-4D33-B9D8-4D1FCDF7B05D}.Release|x64.ActiveCfg = Release|Any CPU
+		{F036E7C0-0744-4D33-B9D8-4D1FCDF7B05D}.Release|x64.Build.0 = Release|Any CPU
+		{F036E7C0-0744-4D33-B9D8-4D1FCDF7B05D}.Release|x86.ActiveCfg = Release|Any CPU
+		{F036E7C0-0744-4D33-B9D8-4D1FCDF7B05D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
