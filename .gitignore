@@ -310,6 +310,10 @@ ServiceFabricBackup/
 
 # Microsoft Fakes
 FakesAssemblies/
+# Ignora i file Assembly generati automaticamente
+AssemblyInfo.cs
+Assembly-CSharp.cs
+Assembly-CSharp-Editor.cs
 
 # GhostDoc plugin setting file
 *.GhostDoc.xml
