@@ -4,17 +4,33 @@ public class VeicoloFactory
 {
     private static VeicoloFactory _instance;
 
-    private  VeicoloFactory()
+    public static VeicoloFactory Instance
+    {
+        get
+        {
+            if (_instance == null)
+                _instance = new VeicoloFactory();
+            return _instance;
+        }
+    }
+
+    private VeicoloFactory()
     {
         Console.WriteLine($"impedisco la creazione dall'esterno");
     }
 
     public static IVeicolo CreaVeicolo(string type)
     {
-        if (_instance == null)
+        switch (type.ToLower())
         {
-            _instance = new VeicoloFactory();
+            case "auto":
+                return new ConcreteAuto();
+            case "moto":
+                return new ConcreteMoto();
+            case "camion":
+                return new ConcreteCamion();
+            default:
+                return null;
         }
-        return (IVeicolo)_instance;
     }
 }

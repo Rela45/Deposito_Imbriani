@@ -61,6 +61,11 @@ public abstract class Decorator : IPiatto
     {
         return _piattoBase.Descrizione();
     }
+
+    public string Prepara()
+    {
+        throw new NotImplementedException();
+    }
 }
 #endregion
 

@@ -64,7 +64,7 @@ class Program
         List<Veicolo> garage = new List<Veicolo>();
         bool continua = true;
         while(continua){
-            Console.WriteLine($"Inserisci 1 per aggiungere un'auto, 2 per aggiungere una moto, 3 per visualizzare il garage, 4 per uscire");
+            Console.WriteLine($"Inserisci 1 per aggiungere un'auto, \n2 per aggiungere una moto, \n3 per visualizzare il garage, \n4 per uscire");
             
             int scelta = Convert.ToInt32(Console.ReadLine());
 
