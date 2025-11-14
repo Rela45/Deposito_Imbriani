@@ -7,8 +7,8 @@
         var MobileApp = new MobileApp();
         var EmailClient = new EmailClient();
 
-        subj.addSubscriber(EmailClient);
-        subj.addSubscriber(MobileApp);
+        subj.AddSubscriber(EmailClient);
+        subj.AddSubscriber(MobileApp);
 
         subj.News = "sono riuscito a implementare il singleton";
     }
